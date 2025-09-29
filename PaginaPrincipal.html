@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FarmaNet</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="estilo.css">
+  <script type="text/javascript" src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+  <!-- Barra superior -->
+  <div class="top-bar">
+    <a href="#"id="btnRegister">Crear tu Cuenta |</a>
+    <a href="#"id="btnLogin">Iniciar Sesión</a>
+  </div>
+  
+  <!-- Modal login/registro -->
+<div id="modalLogin" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>¡Bienvenido a FarmaNet!</h2>
+    <p>Comprá productos de farmacia desde tu casa</p>
+
+    <!-- Formulario de login -->
+    <form id="formLogin">
+      <input type="email" placeholder="Ingresa tu mail" required>
+      <input type="password" placeholder="Ingresa tu contraseña" required>
+      <button type="submit" class="btn">Iniciar sesión</button>
+    </form>
+
+    <p>¿Todavía no tenés cuenta?</p>
+    <button id="btnShowRegister" class="btn">Crear cuenta</button>
+
+    <!-- Formulario de registro (oculto por defecto) -->
+    <form id="formRegister" style="display:none;">
+      <input type="text" placeholder="Nombre" required>
+      <input type="text" placeholder="Apellido" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Contraseña" required>
+      <input type="password" placeholder="Repite tu contraseña" required>
+      <button type="submit" class="btn">Registrarme</button>
+    </form>
+
+    <p id="volverLogin" style="display:none;">¿Ya tenés cuenta? <button class="btn">Iniciar sesión</button></p>
+  </div>
+</div>
+
+</div>
+
+<!--Logo y nombre-->
+<div class="logo">
+  <img src="./logofarmacia.jpg" alt="logofarmacia">
+  <h1>FarmaNet</h1>
+</div>
+
+  <!-- Ofertas,Buscador y carrito -->
+  <div class="ofertas-busqueda">
+    <div class="ofertas-container">
+      <button class="menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <span class="ofertas">Ofertas</span>
+    </div>
+  
+    <div class="menu" class="menu-lateral">
+    <a href="#">Cuidado de la piel</a>
+    <a href="#">Cuidad dental</a>
+    <a href="#">Cuidado capilar</a>
+    <a href="#">Maquillaje</a>
+    <a href="#">Agregar producto</a>
+  </div>
+  
+    <div class="right-section">
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Búsqueda">
+      </div>
+     <button class="carrito" onclick="mostrarCarrito()">
+      <i class="fas fa-shopping-cart"></i>
+    </button>
+    </div>
+  </div>
+
+  <div class="imagen">
+    <img src="./Captura de pantalla 2025-09-14 200201.png" alt="ofertas"></div>
+
+    <!--Productos -->
+    <div class="productos">
+      <div class="tarjeta">
+        <div class="descuento">-25%</div>
+        <img src="./garnier.webp" alt="Garnier">
+        <p>Garnier</p>
+        <button onclick="agregaralcarrito('Garnier','./garnier.webp')">Agregar</button>
+      </div>
+
+      <div class="tarjeta">
+        <div class="descuento">2x1</div>
+        <img src="./pantene.png" alt="Pantene">
+        <p>Pantene</p>
+       <button onclick="agregaralcarrito('Pantene','./pantene.png')">Agregar</button>
+      </div>
+      
+      <div class="tarjeta">
+        <div class="descuento">-30%</div>
+        <img src="./maybelline.webp" alt="Maybelline">
+        <p>Maybelline</p>
+      <button onclick="agregaralcarrito('Maybelline', './maybelline.webp')">Agregar</button>
+      </div>
+      
+      <div class="tarjeta">
+        <div class="descuento">-25%</div>
+        <img src="./dermaglos.webp" alt="Dermaglos">
+        <p>Dermaglós</p>
+       <button onclick="agregaralcarrito('Dermaglós','./dermaglos.webp')">Agregar</button>
+      </div>
+      
+      <div class="tarjeta">
+        <div class="descuento">-40%</div>
+        <img src="./neutrogena.jpg" alt="Neutrogena">
+        <p>Neutogena</p>
+       <button onclick="agregaralcarrito('Neutrogena','./neutrogena.jpg')">Agregar</button>
+      </div>
+    </div>
+
+    <!--Informacion-->
+  <div class="informacion">
+    <div class="info_box">
+      <p><b>Cómo comprar</b><br>En 3 simples pasos</p>
+    </div>
+
+    <div class="info_box">
+      <p><b>Pagá en la Farmacia</b><br>Aboná al retirar tu pedido</p>
+    </div>
+
+    <div class="info_box">
+      <p><b>Envío gratis</b><br>A mas de 3500 Farmacias</p>
+    </div>
+  </div>
+
+    <!--Suscrpcion-->
+  <div class="suscripcion">
+    <h2>¡Enterate antes que nadie!</h2>
+    <p>Suscribite para saber nuestras ofertas</p>
+    <input type="email" placeholder="Igresa tu mail">
+  </div>
+
+  <!--Footer-->
+<footer>
+  <p class="footer-logo">
+    <img src="./logofarmacia.jpg" alt="logo">
+    FarmaNet
+  </p>
+  <p>©Copyright 2025 todos los derechos reservados | Córdoba Argentina</p>
+</footer>
+<!-- Modal Login/Register -->
+<div id="modalLogin" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>¡Bienvenido a FarmaNet!</h2>
+    <form id="formLogin">
+      <input type="email" placeholder="Ingresa tu mail" required>
+      <input type="password" placeholder="Ingresa tu contraseña" required>
+      <button type="submit" class="btn">Iniciar Sesión</button>
+    </form>
+    <p>¿Todavía no tenés cuenta?</p>
+    <button id="btnShowRegister" class="btn">Crear Cuenta</button>
+
+    <form id="formRegister" style="display:none;">
+      <input type="text" placeholder="Nombre" required>
+      <input type="text" placeholder="Apellido" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Contraseña" required>
+      <input type="password" placeholder="Repite tu contraseña" required>
+      <button type="submit" class="btn">Registrarme</button>
+    </form>
+    <p id="volverLogin" style="display:none;">¿Ya tenés cuenta? <button class="btn">Iniciar sesión</button></p>
+  </div>
+</div>
+
+</body>
+</html>
